@@ -59,10 +59,10 @@ def entry():
     plate = request.args.get('plate', '')
     parking_lot = request.args.get('parkingLot', '')
     
-    if plate in parking_plates_entered:
+    if parking_lot in parking_plates_entered:
         return "This parking lot is already in use.", 422
     
-    if parking_lot in parking_lots_in_use:
+    if plate in parking_lots_in_use:
         return "A Car with the same plate is already inside the parking area.", 422
 
     
